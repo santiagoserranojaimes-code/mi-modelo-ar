@@ -2,45 +2,36 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mi modelo 3D en AR</title>
-  
-  <!-- Importa el visor oficial de Google -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f6f7f9;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
+      background: #f0f0f0;
     }
     model-viewer {
       width: 100%;
-      max-width: 600px;
-      height: 80vh;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      height: 100%;
     }
   </style>
 </head>
 <body>
-  
-  <model-viewer src="model.glb"
-                ios-src="model.usdz"
-                alt="Mi modelo en 3D"
-                ar
-                ar-modes="scene-viewer webxr quick-look"
-                ar-scale="fixed"
-                auto-rotate
-                camera-controls
-                shadow-intensity="1">
+  <model-viewer 
+    src="modelo.glb" 
+    ios-src="modelo.usdz" 
+    ar 
+    ar-modes="scene-viewer quick-look webxr" 
+    camera-controls 
+    auto-rotate 
+    alt="Un modelo 3D en AR">
+    
+    <button slot="ar-button" id="ar-button">
+      Ver en tu espacio
+    </button>
   </model-viewer>
-  
 </body>
 </html>
